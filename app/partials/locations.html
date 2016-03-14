@@ -12,7 +12,7 @@
         </select>
     </div>
     <div ng-show="method!=4">
-        <h2>Location Details</h2>
+        <h2c>Location Details</h2c>
         <div>
             <div>Location name:</div>
             <div><input type="text" ng-model="selectedCloneLocation.name" class="form-control" placeholder="Location Name"></div>
@@ -24,6 +24,11 @@
         <div>
             <div>Coordinates adress:</div>
             <div><input type="text" ng-model="selectedCloneLocation.coordinates" class="form-control" placeholder="Location Coordinates"></div>
+            <div class="mapCustom" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}">
+                <ng-map center="{{selectedCloneLocation.adress}}" zoom="12">
+                    <marker position="[{{selectedCloneLocation.coordinates}}]" title="user marker"></marker>
+                </ng-map>
+            </div>
         </div>
         <div>
             <div>Category:</div>
@@ -37,6 +42,5 @@
         <div>
             <span class="errorMsg">{{msgErr}}</span>
         </div>
-        {{selectedLocation}}
     </div>
 </div>

@@ -103,8 +103,9 @@ phonecatControllers.controller('CategoryListCtrl', ['$scope',
       }
   }]);
 
-phonecatControllers.controller('LocationListCtrl', ['$scope',
-  function($scope) {
+phonecatControllers.controller('LocationListCtrl', ['$scope','NgMap',
+  function($scope,NgMap) {
+      $scope.googleMapsUrl='https://maps.googleapis.com/maps/api/js?key=AIzaSyCdNiz_hPeAIqnC8jUGhcLraCIZvhZXhfg';
       $scope.msgErr='';
       $scope.method=method.none;
       $scope.locations=[];
@@ -126,6 +127,10 @@ phonecatControllers.controller('LocationListCtrl', ['$scope',
           $scope.selectedLocation=$scope.locations.length>0?$scope.locations[0]:{};
           setViewMode();
       })();
+
+      NgMap.getMap().then(function(map) {
+
+      });
 
       function setViewMode()
       {

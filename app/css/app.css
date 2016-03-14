@@ -99,7 +99,7 @@ h1 {
 }
 
 .footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
@@ -122,6 +122,15 @@ h1 {
 {
     color: red;
     font-size:14px;
+}
+
+.angular-google-map-container {
+    height: 300px; // Or whatever pixel value you require :)
+}
+
+.mapCustom div
+{
+    margin-top: 0px !important;
 }
 
 /* Custom page CSS

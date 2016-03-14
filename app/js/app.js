@@ -5,7 +5,7 @@
 var phonecatApp = angular.module('myLocatonsApp', [
   'ngRoute',
   'locationsAnimations',
-
+    'ngMap',
   'locationsControles',
   'locationServices'
 ]);
@@ -25,3 +25,5 @@ phonecatApp.config(['$routeProvider',
         redirectTo: '/categories'
       });
   }]);
+
+
