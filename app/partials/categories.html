@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="text-center">
+        <div >
+            <a href="" ng-click="Add()" role="tab" data-toggle="tab" class="big btn btn-primary"><i class="fa fa-plus"></i>Add</a>
+            <a href="" ng-click="Edit()" role="tab" data-toggle="tab" class="big btn btn-danger"><i class="fa fa-user">Edit</i></a>
+            <a href="" ng-click="Remove()" role="tab" data-toggle="tab" class="big btn btn-danger"><i class="fa fa-user"></i>Remove</a>
+        </div>
+    </div>
+    <div style="margin-top: 20px;">
+      <p>Categories :</p>
+      <select class="form-control" ng-model="selectedCategory" ng-options="category.name for category in categories track by category.id">
+        </select>
+    </div>
+    <div ng-show="isEdit">
+        <h2>Category Details</h2>
+        <div>
+            <div>Category name:</div>
+            <div><input type="text" ng-model="selectedCloneCategory.name" class="form-control" placeholder="Category Name"></div>
+        </div>
+        <div>
+            <button class="btn btn btn-success" ng-click="Save()">Save</button>
+            <button class="btn btn btn-warning" ng-click="Cancel()">Cancel</button>
+        </div>
+        <div>
+            <span class="errorMsg">{{msgErr}}</span>
+        </div>
+</div>
+</div>

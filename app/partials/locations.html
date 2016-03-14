@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="text-center">
+        <div >
+            <a href="" ng-click="Add()" role="tab" data-toggle="tab" class="big btn btn-primary"><i class="fa fa-plus"></i>Add</a>
+            <a href="" ng-click="Edit()" role="tab" data-toggle="tab" class="big btn btn-danger"><i class="fa fa-user">Edit</i></a>
+            <a href="" ng-click="Remove()" role="tab" data-toggle="tab" class="big btn btn-danger"><i class="fa fa-user"></i>Remove</a>
+        </div>
+    </div>
+    <div style="margin-top: 20px;">
+        <p>locations :</p>
+        <select class="form-control" ng-change="View()" ng-model="selectedLocation" ng-options="location.name for location in locations | orderBy:'name' track by location.id">
+        </select>
+    </div>
+    <div ng-show="method!=4">
+        <h2>Location Details</h2>
+        <div>
+            <div>Location name:</div>
+            <div><input type="text" ng-model="selectedCloneLocation.name" class="form-control" placeholder="Location Name"></div>
+        </div>
+        <div>
+            <div>Location adress:</div>
+            <div><input type="text" ng-model="selectedCloneLocation.adress" class="form-control" placeholder="Location Adress"></div>
+        </div>
+        <div>
+            <div>Coordinates adress:</div>
+            <div><input type="text" ng-model="selectedCloneLocation.coordinates" class="form-control" placeholder="Location Coordinates"></div>
+        </div>
+        <div>
+            <div>Category:</div>
+            <div><select class="form-control" ng-model="selectedCloneLocation.category" ng-options="category.name for category in categories track by category.id"></select>
+            </div>
+        </div>
+        <div ng-show="method!=2">
+            <button class="btn btn btn-success" ng-click="Save()">Save</button>
+            <button class="btn btn btn-warning" ng-click="Cancel()">Cancel</button>
+        </div>
+        <div>
+            <span class="errorMsg">{{msgErr}}</span>
+        </div>
+        {{selectedLocation}}
+    </div>
+</div>
